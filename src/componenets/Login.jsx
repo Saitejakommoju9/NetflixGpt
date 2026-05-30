@@ -53,7 +53,7 @@ function Login(){
                 // An error occurred
                 // ...
                 });
-                 navigate("/Browse");
+                 //navigate("/Browse");
             })
             .catch((error) => {
                 const errorCode = error.code;
