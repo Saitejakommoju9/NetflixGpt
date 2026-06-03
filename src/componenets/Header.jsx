@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../utils/userSlice";
 import { signOut } from "firebase/auth";
 import { logo, user_icon } from "../../utils/constants";
+import { toggleGptSearch } from "../../utils/gptSlice";
 
 
 function Header(){
@@ -70,11 +71,18 @@ function Header(){
     }
     console.log(userStore);
 
+    const handleGptSearchClick=()=>{
+        dispatch(toggleGptSearch());
+    }
+
 
     return(
         <>
         <div className="flex justify-between w-screen absolute py-2 px-8 bg-gradient-to-b from-black z-10 cursor-pointer">
             <img src={logo} className="w-44"></img>
+
+            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">GPT Search</button>
+          
                 
            
             {userStore && <div className="flex  p-4">
