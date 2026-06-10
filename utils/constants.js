@@ -9,3 +9,8 @@ export const options = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMjg1NGYxNjQ1MmU2ZWJlN2ZlYjU3ZTBhZWExNmQ2YSIsIm5iZiI6MTc4MDEyOTM0NS4wMiwic3ViIjoiNmExYTllNDE1M2E1ODExZTk4ZjVhZGNjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.A9g4aOiabq3OYRZf3LTNtI-lU2YqKGQ2iU25vd-322M'
   }
 };
+
+export const base_url="https://image.tmdb.org/t/p/w500";
+
+export const openAi_key=process.env.REACT_APP_API_KEY;
+

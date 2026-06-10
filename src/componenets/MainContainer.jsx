@@ -18,10 +18,10 @@ function MainContainer(){
     
 
     return(
-        <>
+        <div className="">
         <Videotitle title={title} overView={overview}/>
         <VideoBackground movieId={id}/>
-        </>
+        </div>
         
     );
 

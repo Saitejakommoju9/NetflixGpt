@@ -16,16 +16,16 @@ function Header(){
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
-    const userStore=useSelector((store)=>store.user);
+    const user=useSelector((store)=>store.user);
 
     const handleButton=()=>{
         setDropDown(!dropDown);
     }
-
+    const gpt=useSelector((store)=>store?.gpt?.showGptSearch);
    
 
     useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe=onAuthStateChanged(auth, (user) => {
                 if (user) {
                   
                     //const uid = user.uid;
@@ -57,7 +57,7 @@ function Header(){
                 }
             });
 
-            
+            return ()=>unsubscribe();
         },[]);
 
     const handleClick=()=>{
@@ -69,7 +69,7 @@ function Header(){
         });
 
     }
-    console.log(userStore);
+    console.log(user);
 
     const handleGptSearchClick=()=>{
         dispatch(toggleGptSearch());
@@ -78,27 +78,27 @@ function Header(){
 
     return(
         <>
-        <div className="flex justify-between w-screen absolute py-2 px-8 bg-gradient-to-b from-black z-10 cursor-pointer">
+        <div className="flex justify-between w-full md:w-screen absolute py-2 px-8 bg-gradient-to-b from-black bg-black z-10 cursor-pointer">
             <img src={logo} className="w-44"></img>
 
-            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">GPT Search</button>
+            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>
           
                 
            
-            {userStore && <div className="flex  p-4">
+            {user && <div className="flex  p-4">
                 <img className="w-12 h-12" src={user_icon}></img>
                 
-                <button className="p-2 cursor-pointer" onClick={handleButton}>{dropDown ? "▲" :"▼"}</button>
+                <button className="p-2 text-white cursor-pointer" onClick={handleButton}>{dropDown ? "▲" :"▼"}</button>
                 
                 
             </div>
             } 
         </div>
             
-          {userStore && dropDown && 
+          {user && dropDown && 
         <div className="bg-black absolute right-16  my-26 opacity-85 border border-solid border-gray-500 cursor-pointer">
          <div className="flex px-4 py-2 ">
-            <img className="w-6 h-6 " src={user_icon}></img> <p className="px-2 font-bold text-white">{userStore?.displayName}</p>
+            <img className="w-6 h-6 " src={user_icon}></img> <p className="px-2 font-bold text-white">{user?.displayName}</p>
          </div>
             <h1 className="text-white font-bold py-4 px-4 ">Mange Profiles</h1>
             <hr className="w-full border-gray-300" />

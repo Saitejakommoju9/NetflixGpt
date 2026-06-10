@@ -67,7 +67,7 @@ function Login(){
                 
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/Browse");
+                //navigate("/Browse");
             })
             .catch((error) => {
                 const errorCode = error.code;

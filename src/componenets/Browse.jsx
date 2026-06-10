@@ -6,9 +6,13 @@ import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
 
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+
 function Browse(){
 
     useNowPlayingMovies();
+    useTopRatedMovies();
+    
 
     const showGpt=useSelector((store)=>store.gpt.showGptSearch);
     console.log(showGpt);
