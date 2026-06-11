@@ -78,10 +78,10 @@ function Header(){
 
     return(
         <>
-        <div className="flex justify-between w-full md:w-screen absolute py-2 px-8 bg-gradient-to-b from-black bg-black z-10 cursor-pointer">
-            <img src={logo} className="w-44"></img>
-
-            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>
+        <div className="flex justify-between w-full md:w-screen absolute py-2 px-4 md:px-8 bg-gradient-to-b from-black  z-10 cursor-pointer">
+            <img src={logo} className="w-34 md:w-44"></img>
+            {user &&
+            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>}
           
                 
            

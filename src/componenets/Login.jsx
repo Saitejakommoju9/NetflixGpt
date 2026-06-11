@@ -84,15 +84,15 @@ function Login(){
         <div>
             <Header/>
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_medium.jpg" alt="Login Background" />
+                <img className="h-screen object-cover w-screen" src="https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_medium.jpg" alt="Login Background" />
             </div>
             <div>
-                <form onSubmit={(e)=>e.preventDefault()} className="w-3/12 absolute p-12 bg-black my-36 mx-auto left-0 right-0 opacity-85 text-white rounded-lg">
+                <form onSubmit={(e)=>e.preventDefault()} className="w-[75%] md:w-[50%] lg:w-3/12   absolute p-12 bg-black my-36 mx-auto left-0 right-0 opacity-85 text-white rounded-lg">
                     <h1 className="text-2xl font-bold">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
                     {!isSignInForm && <input ref={name} type="text" placeholder="Enter Name" className="p-2 my-4 w-full bg-gray-700"/>}
                     <input ref={Email} type="text" placeholder="Email Address" className="p-2 my-4 w-full bg-gray-700"/>
                     <input ref={Password} type="Password" placeholder="Password" className="p-2 my-4 w-full bg-gray-700"/>
-                    <p2 className="p-2 text-md text-red-500 font-bold">{errorMessage}</p2>
+                    <p className="p-2 text-md text-red-500 font-bold">{errorMessage}</p>
                     <button className="p-2 my-4 bg-red-600 w-full rounded-sm" onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"}</button>
                     
                     <p onClick={handleClick} className="cursor-pointer hover:text-neutral-500">{isSignInForm?" New to Netflix?Sign Up Now" : "Already Registered?Sign In Now"}</p>
