@@ -1,4 +1,4 @@
-import GptMovieSuggestions from "./gptMovieSuggestions";
+import GptMovieSuggestions from "./GptMovieSuggestions"
 import GptSearchBar from "./GptSearchBar";
 
 function GptSearch(){
