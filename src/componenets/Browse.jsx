@@ -7,18 +7,20 @@ import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
 
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 
 function Browse(){
 
     useNowPlayingMovies();
     useTopRatedMovies();
+    useUpcomingMovies();
     
 
     const showGpt=useSelector((store)=>store.gpt.showGptSearch);
     console.log(showGpt);
 
     return(
-        <div>
+        <div className="px-0 mx-0 w-screen">
             <Header/>
             {showGpt ? <GptSearch/> : 
                 <>

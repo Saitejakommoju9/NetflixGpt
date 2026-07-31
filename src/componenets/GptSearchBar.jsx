@@ -57,10 +57,10 @@ function GptSearchBar(){
 
     return(
         <div className="pt-[10%] flex justify-center ">
-            <form className="w-1/2 bg-black grid grid-cols-12 " onSubmit={(e)=>e.preventDefault()}>
-                <input ref={searchText} type="text" className="col-span-9 rounded-sm p-4 bg-white  m-4 text-black" placeholder="What would you like to watch today"></input>
+            <form className="w-full sm:w-1/2 bg-black grid grid-cols-12 " onSubmit={(e)=>e.preventDefault()}>
+                <input ref={searchText} type="text" className="col-span-9  rounded-sm p-4 bg-white text-xs md:text-sm  m-4 text-black" placeholder="What would you like to watch today"></input>
 
-                <button className="col-span-3 bg-red-600 m-5  rounded-lg py-2 px-4 text-white" onClick={handleGptSearchButton}>Search..</button>
+                <button className="col-span-3  bg-red-600 m-5   rounded-lg py-2 px-4 text-white" onClick={handleGptSearchButton}>Search..</button>
             </form>
         </div>
     )

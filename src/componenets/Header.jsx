@@ -74,19 +74,27 @@ function Header(){
     const handleGptSearchClick=()=>{
         dispatch(toggleGptSearch());
     }
+    console.log("header rendered");
+   
+    const handleNavigate=()=>{
+        navigate("/Favourites");
+    }
 
 
     return(
         <>
-        <div className="flex justify-between w-full md:w-screen absolute py-2 px-4 md:px-8 bg-gradient-to-b from-black  z-10 cursor-pointer">
-            <img src={logo} className="w-34 md:w-44"></img>
-            {user &&
-            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white px-4 py-2 my-5 ml-230 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>}
+        <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">
+            <img src={logo} className="w-30 md:w-44"></img>
+            {user &&<>
+            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white md:px-4 px-1 py-2 my-5 md:ml-94 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>
+            <button className="bg-red-400 p-3 rounded-xl h-12 pt-2 text-white text-lg" onClick={handleNavigate}>Favourites</button>
+            </>
+            }
           
                 
            
             {user && <div className="flex  p-4">
-                <img className="w-12 h-12" src={user_icon}></img>
+                <img className="w-10 md:w-12 h-12" src={user_icon}></img>
                 
                 <button className="p-2 text-white cursor-pointer" onClick={handleButton}>{dropDown ? "▲" :"▼"}</button>
                 

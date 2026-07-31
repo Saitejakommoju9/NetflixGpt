@@ -9,7 +9,7 @@ function MainContainer(){
    if(!movies)
         return;
 
-    const mainMovie=movies[6];
+    const mainMovie=movies[7];
 
     console.log(mainMovie);
 
@@ -18,7 +18,7 @@ function MainContainer(){
     
 
     return(
-        <div className="">
+        <div className="pt-[7%] bg-black xs:pt-0 md:pt-0 ">
         <Videotitle title={title} overView={overview}/>
         <VideoBackground movieId={id}/>
         </div>

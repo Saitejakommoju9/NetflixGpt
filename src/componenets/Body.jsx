@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
+import Favourites from "./Favourites";
 
 
 function Body(){
@@ -15,7 +16,12 @@ function Body(){
         {
             path:"/Browse",
             element:<Browse/>
-        }
+        },
+        {
+            path:"/Favourites",
+            element:<Favourites/>
+
+        },
     ]);
 
     
