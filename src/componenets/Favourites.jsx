@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import MoviesCard from "./MoviesCard";
 import { useSelector } from "react-redux";
@@ -5,8 +6,15 @@ import { useSelector } from "react-redux";
 function Favourites(){
     const favourites=useSelector((store)=>store.favourite);
     console.log(favourites);
+    const navigate=useNavigate();
+    const handleClick=()=>{
+        navigate('/Browse');
+    }
     return(
         <div>
+            <div className="absolute right-30 my-4">
+                <button className="bg-green-500 py-2 px-4 cursor-pointer  text-white rounded-lg " onClick={handleClick}>Home Page</button>
+            </div>
             <h1 className="text-red-500 left-1/2 my-5 text-center -ml-15 sm:-ml-10 text-3xl absolute font-bold">Favourites!</h1>
        
               <div className="fixed -z-10">
