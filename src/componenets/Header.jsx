@@ -83,20 +83,20 @@ function Header(){
 
     return(
         <>
-        <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">
-            <img src={logo} className="w-30 md:w-44"></img>
+        <div className="absolute w-screen py-2 bg-gradient-to-b from-black z-10 flex  justify-between">
+            <img src={logo} className="w-17 sm:w-44"></img>
             {user &&<>
-            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white md:px-4 px-1 py-2 my-5 md:ml-94 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>
-            <button className="bg-red-400 p-3 rounded-xl h-12 pt-2 text-white text-lg" onClick={handleNavigate}>Favourites</button>
+            <button onClick={handleGptSearchClick} className="bg-purple-700 text-white md:px-4 cursor-pointer px-1 text-sm py-2 my-5 md:ml-94 rounded-lg">{gpt?"Home Page" : "GPT Search"}</button>
+            <button className="bg-red-400 px-1 sm:p-3 rounded-xl mt-4 cursor-pointer h-12 pt-1 sm:pt-2 text-white text-lg" onClick={handleNavigate}>Favourites</button>
             </>
             }
           
                 
            
-            {user && <div className="flex  p-4">
+            {user && <div className="flex cursor-pointer  p-4">
                 <img className="w-10 md:w-12 h-12" src={user_icon}></img>
                 
-                <button className="p-2 text-white cursor-pointer" onClick={handleButton}>{dropDown ? "▲" :"▼"}</button>
+                <button className=" text-white cursor-pointer" onClick={handleButton}>{dropDown ? "▲" :"▼"}</button>
                 
                 
             </div>
@@ -104,9 +104,9 @@ function Header(){
         </div>
             
           {user && dropDown && 
-        <div className="bg-black absolute right-16  my-26 opacity-85 border border-solid border-gray-500 cursor-pointer">
-         <div className="flex px-4 py-2 ">
-            <img className="w-6 h-6 " src={user_icon}></img> <p className="px-2 font-bold text-white">{user?.displayName}</p>
+        <div className="bg-black absolute hover:opacity-70 right-2 sm:right-16 my-20  sm:my-26 opacity-85 border border-solid border-gray-500 cursor-pointer">
+         <div className="flex  py-2 ">
+            <img className="w-6 h-6 ml-4" src={user_icon}></img> <p className="px-2 font-bold text-white">{user?.displayName}</p>
          </div>
             <h1 className="text-white font-bold py-4 px-4 ">Mange Profiles</h1>
             <hr className="w-full border-gray-300" />

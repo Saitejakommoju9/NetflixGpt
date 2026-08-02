@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { base_url } from "../../utils/constants";
 import Shimmer from "./Shimmer";
-import { useDispatch } from "react-redux";
-import { addTofavourite } from "../../utils/favouritesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addTofavourite, removeFromfavourites } from "../../utils/favouritesSlice";
 
 function MoviesCard({poster,movie}){
-    const [isFavourite,setIsFavourite]=useState(false);
+    const favourites=useSelector((store)=>store.favourite);
+    console.log(favourites);
+    const isFavourite=favourites.some((item)=>item.id===movie.id);
     const dispatch=useDispatch();
+    
     const handleClick=()=>{
-        setIsFavourite(!isFavourite);
-        dispatch(addTofavourite(movie));
+      
+        if(isFavourite){
+            dispatch(removeFromfavourites(movie.id));
+        }else{
+            dispatch(addTofavourite(movie));
+        }
     }
     return movie?(
         <div className="px-2 relative w-27 md:w-48">
