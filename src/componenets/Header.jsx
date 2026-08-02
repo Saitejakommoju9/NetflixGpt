@@ -104,7 +104,7 @@ function Header(){
         </div>
             
           {user && dropDown && 
-        <div className="bg-black absolute z-20 hover:opacity-70 right-2 sm:right-16 my-20  sm:my-26 opacity-85 border border-solid border-gray-500 cursor-pointer">
+        <div className="bg-black absolute z-40 hover:opacity-70 right-2 sm:right-16 my-20  sm:my-26 opacity-85 border border-solid border-gray-500 cursor-pointer">
          <div className="flex  py-2 ">
             <img className="w-6 h-6 ml-4" src={user_icon}></img> <p className="px-2 font-bold text-white">{user?.displayName}</p>
          </div>
