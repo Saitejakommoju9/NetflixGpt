@@ -44,7 +44,7 @@ function GptSearchBar(){
 
 
 
-        console.log(gptResults.choices[0].message.content);
+       
         const gptMovie=gptResults.choices[0].message.content.split(",");
         const promiseArray=gptMovie.map((movie)=>searchTmdbMovie(movie));
         const tmdbMovie=await Promise.all(promiseArray);

@@ -13,4 +13,4 @@ export const options = {
 export const base_url="https://image.tmdb.org/t/p/w500";
 
 export const openAi_key=import.meta.env.VITE_API_KEY;
-console.log(openAi_key);
+

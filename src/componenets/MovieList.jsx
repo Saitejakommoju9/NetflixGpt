@@ -7,7 +7,7 @@ function MovieList({title,movies}){
             <h1 className="text-white text-2xl font-light py-4 mx-2">{title}</h1>
             {movies?(
             <div className="flex  overflow-x-scroll hide-scrollbar">
-                <div className="flex  ">
+                <div className="flex  mb-6">
                     {movies?.map((movie)=>(
                         <>
                         

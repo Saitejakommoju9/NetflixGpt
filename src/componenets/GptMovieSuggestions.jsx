@@ -8,8 +8,6 @@ function GptMovieSuggestions(){
 
 
 
-    console.log(movieName);
-    console.log(movieResult);
     return(
         <div className="bg-black p-4 m-4 mt-20 opacity-78 ">
             <div className="">

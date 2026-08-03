@@ -4,14 +4,13 @@ import Videotitle from "./Videotitle";
 
 function MainContainer(){
     const movies=useSelector((store)=>store.movie?.nowPlayingMovies);
-    console.log(movies);
 
    if(!movies)
         return;
 
     const mainMovie=movies[7];
 
-    console.log(mainMovie);
+
 
     const{title,overview,id}=mainMovie;
     

@@ -6,7 +6,7 @@ import { addTofavourite, removeFromfavourites } from "../../utils/favouritesSlic
 
 function MoviesCard({poster,movie}){
     const favourites=useSelector((store)=>store.favourite);
-    console.log(favourites);
+
     const isFavourite=favourites.some((item)=>item.id===movie.id);
     const dispatch=useDispatch();
     

@@ -17,8 +17,7 @@ function Browse(){
     
 
     const showGpt=useSelector((store)=>store.gpt.showGptSearch);
-    console.log(showGpt);
-
+    
     return(
         <div className="px-0 mx-0 w-screen">
             <Header/>

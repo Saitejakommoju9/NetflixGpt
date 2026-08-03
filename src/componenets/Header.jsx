@@ -69,12 +69,11 @@ function Header(){
         });
 
     }
-    console.log(user);
+ 
 
     const handleGptSearchClick=()=>{
         dispatch(toggleGptSearch());
     }
-    console.log("header rendered");
    
     const handleNavigate=()=>{
         navigate("/Favourites");

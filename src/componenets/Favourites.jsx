@@ -5,17 +5,17 @@ import { useSelector } from "react-redux";
 
 function Favourites(){
     const favourites=useSelector((store)=>store.favourite);
-    console.log(favourites);
+    
     const navigate=useNavigate();
     const handleClick=()=>{
         navigate('/Browse');
     }
     return(
         <div>
-            <div className="absolute right-30 my-4">
+            <div className="absolute right-0 top-1 sm:right-30 my-4">
                 <button className="bg-green-500 py-2 px-4 cursor-pointer  text-white rounded-lg " onClick={handleClick}>Home Page</button>
             </div>
-            <h1 className="text-red-500 left-1/2 my-5 text-center -ml-15 sm:-ml-10 text-3xl absolute font-bold">Favourites!</h1>
+            <h1 className="text-red-500 left-1/2 my-18 text-center -ml-11 sm:-ml-10 text-3xl sm:text-5xl absolute font-bold">Favourites!</h1>
        
               <div className="fixed -z-10">
                 <img className="h-screen fixed w-screen object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_medium.jpg" alt="Login Background" />

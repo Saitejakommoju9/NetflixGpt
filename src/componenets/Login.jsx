@@ -66,7 +66,7 @@ function Login(){
             .then((userCredential) => {
                 
                 const user = userCredential.user;
-                console.log(user);
+            
                 //navigate("/Browse");
             })
             .catch((error) => {
